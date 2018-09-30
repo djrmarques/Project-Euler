@@ -4,6 +4,18 @@
 
 #include <stdio.h>
 
-int main() {
+int main(){
+  int ans = 233168;
+  int sum = 0;
 
+  for(int i=0; i<1000; ++i){
+    if((i % 3 == 0) || (i % 5 == 0)){
+      sum += i;
+    }
+  }
+  if(sum == ans){
+    printf("Correct\n");
+  }
+  else{
+    printf("Wrong\n");}
 }
