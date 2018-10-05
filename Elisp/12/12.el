@@ -32,8 +32,8 @@
       (setq i (+ 1 i))
       (setq n-div (get-n-div N))
       )
-    (kill-new (format "%d" N))
-    (write-region (format "%d\n" N) nil "ans" 'append)
+    (kill-new (format "%d" n))
+    (write-region (format "%d\n" n) nil "ans" 'append)
   )
 )
 
