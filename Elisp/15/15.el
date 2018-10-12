@@ -1,29 +1,24 @@
 ;; Theone with the arrows
-;; Based on this http://code.jasonbhill.com/python/project-euler-problem-15/
-
-;; def route_num(cube_size):
-;;     L = [1] * cube_size
-;;     for i in range(cube_size):
-;;         for j in range(i):
-;;             L[j] = L[j]+L[j-1]
-;;         L[i] = 2 * L[i - 1]
-;;     return L[cube_size - 1]
-
-
-
 (defun euler-15 (size)
-  (let (v (i 0))
-    (setq v (make-vector size 1))
-    ;; Iterate trough the arrau
-    (while (< i size)
-      ()
+  (let (v (i 1))
+    ;; Create Vector
+    (setq v (make-vector (+ size 1) 1))
 
+    ;; Iterate trough the array
+    (while (<= i size)
+      (let ((j 1))
+        (while (<= j size)
+          (aset v j (+ (aref v j) (aref v (- j 1))))
 
-      (setq i (+ i 1))
+        (setq j (+ 1 j))
+       )
       )
-    v
-    )
+      (setq i (+ i 1))
+      
   )
+    (aref v size)
+ )
+)
+(euler-15 20)
 
-
-(euler-15 2)
+;; 137846528820
